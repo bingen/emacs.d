@@ -49,8 +49,12 @@
 (require 'init-recentf)
 (require 'init-ido)
 (require 'init-auto-complete)
+(require 'init-windows)
 
 (require 'init-editing-utils)
+
+;(require 'init-git)
+;(require 'init-github)
 
 (require 'init-crontab)
 (require 'init-markdown)
@@ -63,6 +67,7 @@
 (require 'init-css)
 (require 'init-python-mode)
 (require 'init-sql)
+(require 'init-octave)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))

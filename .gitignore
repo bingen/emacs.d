@@ -34,6 +34,6 @@ site-lisp/package/
 /image-dired/
 /eshell
 
-lisp/init-local.el
+#lisp/init-local.el
 session*
 .#.smex-items
