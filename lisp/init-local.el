@@ -4,7 +4,7 @@
 (global-set-key (kbd "S-s-<left>") 'windmove-left)
 
 ;; linum-mode by default
-(require ‘linum)
+(require 'linum)
 (global-linum-mode 1)
 
 (provide 'init-local)

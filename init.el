@@ -53,9 +53,10 @@
 
 (require 'init-editing-utils)
 
-;(require 'init-git)
-;(require 'init-github)
+(require 'init-git)
+(require 'init-github)
 
+(require 'init-c)
 (require 'init-crontab)
 (require 'init-markdown)
 (require 'init-csv)
