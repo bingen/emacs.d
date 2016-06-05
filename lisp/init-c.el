@@ -11,13 +11,14 @@
   (interactive)
   (c-mode)
   (c-set-style "K&R")
-  (setq c-basic-offset 8))
+  (setq c-basic-offset 8
+        indent-tabs-mode t))
 
 (setq auto-mode-alist
       (cons '("\\.[ch]$" . linux-c-mode)
       auto-mode-alist))
 ;;http://www.delorie.com/gnu/docs/emacs/cc-mode_6.html
 ;;http://www.gnu.org/software/emacs/manual/html_mono/ccmode.html#Minor-Modes
-(add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
+; C-c C-a: (add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
 
 (provide 'init-c)

@@ -56,7 +56,14 @@
 (require 'init-git)
 (require 'init-github)
 
+;; C/C++
 (require 'init-c)
+(require 'setup-helm)
+(require 'setup-helm-gtags)
+;; (require 'setup-ggtags)
+(require 'setup-cedet)
+(require 'setup-editing)
+
 (require 'init-crontab)
 (require 'init-markdown)
 (require 'init-csv)

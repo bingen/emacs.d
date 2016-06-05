@@ -37,3 +37,7 @@ site-lisp/package/
 #lisp/init-local.el
 session*
 .#.smex-items
+ido.last
+recentf
+ede-projects.el
+
