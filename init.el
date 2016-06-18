@@ -64,6 +64,8 @@
 (require 'setup-cedet)
 (require 'setup-editing)
 
+(require 'capnp-mode)
+
 (require 'init-crontab)
 (require 'init-markdown)
 (require 'init-csv)
