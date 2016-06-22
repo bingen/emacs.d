@@ -1,3 +1,4 @@
+(require-package 'helm)
 (require 'helm-config)
 (require 'helm-grep)
 

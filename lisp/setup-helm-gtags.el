@@ -1,3 +1,4 @@
+(require-package 'helm-gtags)
 (require 'helm-gtags)
 
 (setq
