@@ -6,6 +6,8 @@
 (require-package 'git-messenger) ;; Though see also vc-annotate's "n" & "p" bindings
 (require-package 'git-timemachine)
 
+;; http://emacs.stackexchange.com/a/17733
+(global-git-commit-mode)
 
 (when (maybe-require-package 'magit)
   (setq-default
