@@ -11,14 +11,27 @@
   (interactive)
   (c-mode)
   (c-set-style "K&R")
-  (setq c-basic-offset 8
-        indent-tabs-mode t))
+  (setq c-basic-offset 4
+        tab-width 4
+        indent-tabs-mode t)
+  (quagga-linux-style)
+  )
 
 (setq auto-mode-alist
       (cons '("\\.[ch]$" . linux-c-mode)
       auto-mode-alist))
 ;;http://www.delorie.com/gnu/docs/emacs/cc-mode_6.html
 ;;http://www.gnu.org/software/emacs/manual/html_mono/ccmode.html#Minor-Modes
-; C-c C-a: (add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
+;; C-c C-a: (add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
+
+;; For Quagga
+;; https://www.emacswiki.org/emacs/IndentingC#toc11
+(defun quagga-linux-style ()
+  (when (and buffer-file-name
+             (string-match "quagga" buffer-file-name))
+    (c-set-style "gnu")
+    (setq c-basic-offset 2
+          tab-width 8
+          indent-tabs-mode nil)))
 
 (provide 'init-c)
