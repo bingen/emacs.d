@@ -30,6 +30,7 @@
   (when (and buffer-file-name
              (string-match "quagga" buffer-file-name))
     (c-set-style "gnu")
+    (dtrt-indent-undo)
     (setq c-basic-offset 2
           tab-width 8
           indent-tabs-mode nil)))
