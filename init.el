@@ -82,6 +82,8 @@
 (when *spell-check-support-enabled*
   (require 'init-spelling))
 
+(require 'init-flycheck)
+
 ;;(require 'init-marmalade)
 
 ;;----------------------------------------------------------------------------

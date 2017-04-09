@@ -29,6 +29,9 @@
 (add-to-list 'package-archives `("melpa" . ,(if (< emacs-major-version 24)
                                                 "http://melpa.org/packages/"
                                               "https://melpa.org/packages/")))
+;(add-to-list 'package-archives `("stable melpa" . ,(if (< emacs-major-version 24)
+;                                                "http://stable.melpa.org/packages/"
+;                                              "https://stable.melpa.org/packages/")))
 
 
 
