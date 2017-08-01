@@ -1,4 +1,7 @@
-;https://www.emacswiki.org/emacs/IndentingC
+;;; package --- C mode
+;;; Commentary:
+;;; Code:
+;;https://www.emacswiki.org/emacs/IndentingC
 ;;(require-package 'guess-offset)
 ;; (setq c-default-style "linux"
 ;;       c-basic-offset 4
@@ -35,4 +38,10 @@
           tab-width 8
           indent-tabs-mode nil)))
 
+;; Compile key binding
+;; http://tuhdo.github.io/c-ide.html#orgheadline57
+(global-set-key (kbd "<f5>") (lambda ()
+                               (interactive)
+                               (setq-local compilation-read-command nil)
+                               (call-interactively 'compile)))
 (provide 'init-c)
