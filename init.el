@@ -78,6 +78,7 @@
 (require 'init-python-mode)
 (require 'init-sql)
 (require 'init-octave)
+(require 'init-solidity)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
