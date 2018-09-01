@@ -79,6 +79,7 @@
 (require 'init-sql)
 (require 'init-octave)
 (require 'init-solidity)
+(require 'init-latex)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
