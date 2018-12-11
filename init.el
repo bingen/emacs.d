@@ -3,6 +3,13 @@
 ;;("melpa" . "http://melpa.milkbox.net/packages/"))
 
 ;; sort apropos by rlevance
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (setq apropos-sort-by-scores t)
 
 ;; bind M-i to imenu
@@ -43,11 +50,9 @@
 (require-package 'diminish)
 
 (require 'init-themes)
-(require 'init-dired)
 (require 'init-isearch)
 
 (require 'init-recentf)
-(require 'init-ido)
 (require 'init-auto-complete)
 (require 'init-windows)
 
@@ -66,7 +71,6 @@
 
 (require 'capnp-mode)
 
-(require 'init-crontab)
 (require 'init-org)
 (require 'init-markdown)
 (require 'init-ox-pandoc)
