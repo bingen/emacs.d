@@ -1,5 +1,6 @@
 (when (< emacs-major-version 24)
   (require-package 'org))
+(require-package 'org-plus-contrib)
 
 (define-key global-map (kbd "C-c l") 'org-store-link)
 (define-key global-map (kbd "C-c a") 'org-agenda)
