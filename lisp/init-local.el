@@ -9,7 +9,7 @@
 
 ;; Set default font size
 ;; https://stackoverflow.com/a/296316/1937418
-(set-face-attribute 'default nil :height 80)
+(set-face-attribute 'default nil :height 100)
 
 (provide 'init-local)
 
