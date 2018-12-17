@@ -87,6 +87,7 @@
 (require 'init-octave)
 (require 'init-solidity)
 (require 'init-latex)
+(require 'init-mu4e)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
