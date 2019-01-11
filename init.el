@@ -2,7 +2,7 @@
 ;;("marmalade" . "http://marmalade-repo.org/packages/")
 ;;("melpa" . "http://melpa.milkbox.net/packages/"))
 
-;; sort apropos by rlevance
+;; sort apropos by relevance
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -93,6 +93,8 @@
   (require 'init-spelling))
 
 (require 'init-flycheck)
+
+(require 'init-dvorak)
 
 ;;(require 'init-marmalade)
 
