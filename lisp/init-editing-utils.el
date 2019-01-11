@@ -82,6 +82,8 @@
   (add-hook hook 'highlight-symbol-nav-mode))
 (eval-after-load 'highlight-symbol
   '(diminish 'highlight-symbol-mode))
+(global-set-key "\M-p" 'highlight-symbol-prev)
+(global-set-key "\M-n" 'highlight-symbol-next)
 
 ;;----------------------------------------------------------------------------
 ;; Zap *up* to char is a handy pair for zap-to-char
