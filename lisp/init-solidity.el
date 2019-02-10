@@ -3,6 +3,8 @@
 ;;; Code:
 
 (require-package 'solidity-mode)
+(require-package 'solidity-flycheck)
+(require-package 'company-solidity)
 
 ;; https://emacs.stackexchange.com/a/17565/12560
 (defun solidity-custom-settings ()
