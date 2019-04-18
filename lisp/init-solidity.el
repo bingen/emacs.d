@@ -14,6 +14,8 @@
 
 (add-hook 'solidity-mode-hook 'solidity-custom-settings)
 
+(setq c-basic-offset 4)
+
 ;; https://github.com/ethereum/emacs-solidity
 ;(define-key map (kbd "C-c C-g") 'solidity-estimate-gas-at-point)
 
