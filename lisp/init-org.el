@@ -1,9 +1,14 @@
+;;; package --- Org mode configuration
+;;; Commentary:
+;;; see: http://doc.norang.ca/org-mode.html
+;;; Code
 (when (< emacs-major-version 24)
   (require-package 'org))
 (require-package 'org-plus-contrib)
 
 (define-key global-map (kbd "C-c l") 'org-store-link)
 (define-key global-map (kbd "C-c a") 'org-agenda)
+(define-key global-map (kbd "C-c b") 'org-iswitchb)
 
 ;; Various preferences
 (setq org-log-done t
@@ -18,6 +23,9 @@
       org-export-kill-product-buffer-when-displayed t
       org-tags-column 80)
 
+;; all files in this directories will contribute to the agenda
+(setq org-agenda-files (quote ("~/Documents/org"
+                               "~/org")))
 
 ; Refile targets include this file and any file contributing to the agenda - up to 5 levels deep
 (setq org-refile-targets (quote ((nil :maxlevel . 5) (org-agenda-files :maxlevel . 5))))
@@ -28,9 +36,17 @@
 
 
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "STARTED(s)" "|" "DONE(d!/!)")
-              (sequence "WAITING(w@/!)" "SOMEDAY(S)" "|" "CANCELLED(c@/!)"))))
-
+      (quote ((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "|" "DONE(d!/!)")
+              (sequence "WAITING(w@/!)" "SOMEDAY(S)" "|" "CANCELLED(c@/!)" "MEETING"))))
+(setq org-todo-keyword-faces
+      (quote (("TODO" :foreground "red" :weight bold)
+              ("NEXT" :foreground "blue" :weight bold)
+              ("STARTED" :foreground "yellow" :weight bold)
+              ("DONE" :foreground "forest green" :weight bold)
+              ("WAITING" :foreground "orange" :weight bold)
+              ("SOMEDAY" :foreground "magenta" :weight bold)
+              ("CANCELLED" :foreground "forest green" :weight bold)
+              ("MEETING" :foreground "forest green" :weight bold))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Org clock
@@ -72,36 +88,8 @@
 (after-load 'org-agenda
   (define-key org-agenda-mode-map (kbd "P") 'org-pomodoro))
 
-
-;; ;; Show iCal calendars in the org agenda
-;; (when (and *is-a-mac* (require 'org-mac-iCal nil t))
-;;   (setq org-agenda-include-diary t
-;;         org-agenda-custom-commands
-;;         '(("I" "Import diary from iCal" agenda ""
-;;            ((org-agenda-mode-hook #'org-mac-iCal)))))
-
-;;   (add-hook 'org-agenda-cleanup-fancy-diary-hook
-;;             (lambda ()
-;;               (goto-char (point-min))
-;;               (save-excursion
-;;                 (while (re-search-forward "^[a-z]" nil t)
-;;                   (goto-char (match-beginning 0))
-;;                   (insert "0:00-24:00 ")))
-;;               (while (re-search-forward "^ [a-z]" nil t)
-;;                 (goto-char (match-beginning 0))
-;;                 (save-excursion
-;;                   (re-search-backward "^[0-9]+:[0-9]+-[0-9]+:[0-9]+ " nil t))
-;;                 (insert (match-string 0))))))
-
-
 (after-load 'org
-  (define-key org-mode-map (kbd "C-M-<up>") 'org-up-element)
-;  (when *is-a-mac*
-;    (define-key org-mode-map (kbd "M-h") nil))
-  (define-key org-mode-map (kbd "C-M-<up>") 'org-up-element)
-;  (when *is-a-mac*
-;    (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link)))
-  )
+  (define-key org-mode-map (kbd "C-M-<up>") 'org-up-element))
 
 (after-load 'org
   (org-babel-do-load-languages
@@ -111,7 +99,7 @@
      (dot . t)
      (emacs-lisp . t)
      (gnuplot . t)
-     (haskell . nil)
+     (haskell . t)
      (latex . t)
      (ledger . t)
      (ocaml . nil)
@@ -120,8 +108,9 @@
      (ruby . t)
      (screen . nil)
      (sh . t)
-     (sql . nil)
+     (sql . t)
      (sqlite . t))))
 
 
 (provide 'init-org)
+;;; init-org.el ends here
