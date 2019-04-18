@@ -75,14 +75,7 @@
 (require-package 'yasnippet)
 (require 'yasnippet)
 (yas-global-mode 1)
-
-;; PACKAGE: smartparens
-(require-package 'smartparens)
-(require 'smartparens-config)
-(setq sp-base-key-bindings 'paredit)
-(setq sp-autoskip-closing-pair 'always)
-(setq sp-hybrid-kill-entire-symbol nil)
-(sp-use-paredit-bindings)
+(require-package 'yasnippet-snippets)
 
 (show-smartparens-global-mode +1)
 (smartparens-global-mode 1)
